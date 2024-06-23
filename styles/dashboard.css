@@ -138,3 +138,86 @@ header {
 #logout-btn:hover {
   background-color: #ccc;
 }
+
+.document-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.document-header h2 {
+  margin: 0;
+  font-size: 2rem;
+  color: #fff;
+  text-shadow: 2px 2px 0 #00d7e6, -2px -2px 0 #ea00cb;
+}
+
+/* Estilo existente para el botón de edición */
+#editar-cv-btn {
+  background-color: #fff;
+  color: #765d97;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+#editar-cv-btn:hover {
+  background-color: #ccc;
+}
+
+/* Estilo existente para el resto del documento */
+.document {
+  background-color: #5e4c86;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  width: 95%;
+  text-align: left;
+}
+
+.document h3 {
+  font-size: 1.5rem;
+  color: #fff;
+  text-shadow: 1px 1px 0 #00d7e6, -1px -1px 0 #ea00cb;
+  margin-bottom: 10px;
+}
+
+.document p {
+  color: #fff;
+  font-size: 1rem;
+  background-color: #775eac;
+  padding: 10px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.edit-input {
+  display: none;
+  width: 100%;
+  margin-top: 10px;
+}
+
+#guardar-cv-btn {
+  background-color: #fff;
+  color: #765d97;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+  width: 15%;
+  margin: 15px auto;
+}
+
+#guardar-cv-btn:hover {
+  background-color: #ccc;
+}

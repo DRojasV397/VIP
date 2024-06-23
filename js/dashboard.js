@@ -21,10 +21,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         ]
     });
+    
     document.getElementById('logout-btn').addEventListener('click', function() {
         borrarCookie('userCookie');
-
-        window.location.href = '../login.html'; // Cambia 'login.html' por la página a la que quieres redirigir
+        window.location.href = '../login.html'; 
     });
 
     function borrarCookie(nombre) {
@@ -83,5 +83,59 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('descripcion').textContent = cv.descripcion;
         document.getElementById('pasatiempos').textContent = cv.pasatiempos;
         document.getElementById('puesto').textContent = cv.puesto;
+    }
+
+    document.getElementById('editar-cv-btn').addEventListener('click', function() {
+        toggleEditMode(true);
+    });
+
+    document.getElementById('guardar-cv-btn').addEventListener('click', function() {
+        toggleEditMode(false);
+        guardarCV();
+    });
+
+    function toggleEditMode(editMode) {
+        const textElements = document.querySelectorAll('.document p');
+        const inputElements = document.querySelectorAll('.edit-input');
+
+        if (editMode) {
+            textElements.forEach(el => el.style.display = 'none');
+            inputElements.forEach(el => el.style.display = 'block');
+        } else {
+            textElements.forEach(el => el.style.display = 'block');
+            inputElements.forEach(el => el.style.display = 'none');
+        }
+    }
+
+    function guardarCV() {
+        const cv = {
+            proyectos: document.getElementById('proyectos-input').value,
+            experiencia: document.getElementById('experiencia-input').value,
+            carrera: document.getElementById('carrera-input').value,
+            habilidades: document.getElementById('habilidades-input').value,
+            objetivos: document.getElementById('objetivos-input').value,
+            cursos: document.getElementById('cursos-input').value,
+            descripcion: document.getElementById('descripcion-input').value,
+            pasatiempos: document.getElementById('pasatiempos-input').value,
+            puesto: document.getElementById('puesto-input').value,
+        };
+        
+        const actURL = 'https://otros-d07g.onrender.com/api/actualizarCV/' + valorCookie;
+        fetch(actURL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(cv)
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Datos guardados:', data);
+        })
+        .catch(error => {
+            console.error('Error al guardar los datos:', error);
+        });
+
+        actualizarCV(cv);  // Actualiza la vista con los nuevos datos
     }
 });
