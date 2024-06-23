@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #5A3E98;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.container {
+    text-align: center;
+    background-color: #765d97;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    width: 85%;
+    max-width: 600px; /* Ajusta el ancho máximo según tu preferencia */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 5px;
+    text-shadow: 1px 1px #FF00FF;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    background-color: #5A3E98;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+button {
+    width: 40%;
+    padding: 10px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #5A3E98;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #00FFFF;
+    color: #000;
+}
+
+.toggle-password {
+    cursor: pointer;
+    font-size: 0.7rem;
+    color: #5A3E98; /* Color del texto */
+    margin-left: 5px;
+    text-decoration: underline;
+    background-color: #fff; /* Fondo del botón */
+    padding: 5px 10px; /* Espaciado dentro del botón */
+    border-radius: 5px; /* Borde redondeado */
+    transition: background-color 0.3s, color 0.3s; /* Transición suave */
+}
+
+.toggle-password:hover {
+    background-color: #9B89B3; /* Color de fondo al pasar el ratón */
+    color: #fff; /* Color del texto al pasar el ratón */
+}
+
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+.password-container .toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+}

@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: block;
+    height: 100vh;
+    background-color: #5A3E98;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.container {
+    text-align: center;
+    background-color: #9B89B3;
+    padding: 20px;
+    margin-top: 8%;
+    margin-bottom: 2%;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    width: 43%;
+    max-width: 982px;
+}
+
+form {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 5px;
+    text-shadow: 1px 1px 0 #00d7e6, -1px -1px 0 #ea00cb;
+    width: 200px;
+    text-align: center;
+    margin-left: 15px;
+}
+
+input {
+    width: 200px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    background-color: #5A3E98;
+    color: #fff;
+}
+
+select {
+    width: 224px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    background-color: #5A3E98;
+    color: #fff;
+}
+
+button {
+    display: block;
+    width: 200px;
+    padding: 10px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #5A3E98;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+    max-height: 45px;
+}
+
+button:hover {
+    background-color: #00FFFF;
+    color: #000;
+}
+
+.toggle-password {
+    cursor: pointer;
+    font-size: 0.7rem;
+    color: #5A3E98; /* Color del texto */
+    margin-left: 5px;
+    text-decoration: underline;
+    background-color: #fff; /* Fondo del botón */
+    padding: 5px 10px; /* Espaciado dentro del botón */
+    border-radius: 5px; /* Borde redondeado */
+    transition: background-color 0.3s, color 0.3s; /* Transición suave */
+}
+
+.toggle-password:hover {
+    background-color: #9B89B3; /* Color de fondo al pasar el ratón */
+    color: #fff; /* Color del texto al pasar el ratón */
+}
+
+.password-container {
+    position: relative;
+}
+
+.password-container .toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+}
+
+.cont {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    margin-top: 6%;
+    margin-bottom: 2%;
+}

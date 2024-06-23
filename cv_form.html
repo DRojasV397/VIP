@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VP - CV</title>
+    <link rel="stylesheet" href="../styles/cv_form.css">
+</head>
+<body>
+    <canvas class="background"></canvas>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
+    <div class="container">
+        <h1>VP - CV</h1>
+        <form id="cv-form" class="cv-form">
+            <div class="cv-sections">
+                <div class="column">
+                    <div class="cv-section">
+                        <label for="proyectos">Proyectos</label>
+                        <textarea id="proyectos" name="proyectos" rows="3"></textarea>
+                    </div>
+                    <div class="cv-section">
+                        <label for="experiencia">Experiencia</label>
+                        <textarea id="experiencia" name="experiencia" rows="5"></textarea>
+                    </div>
+                    <div class="cv-section">
+                        <label for="carrera">Carrera</label>
+                        <textarea id="carrera" name="carrera" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="cv-section">
+                        <label for="habilidades">Habilidades (Software)</label>
+                        <textarea id="habilidades" name="habilidades" rows="3"></textarea>
+                    </div>
+                    <div class="cv-section">
+                        <label for="objetivos">Objetivos</label>
+                        <textarea id="objetivos" name="objetivos" rows="3"></textarea>
+                    </div>
+                    <div class="cv-section">
+                        <label for="cursos">Cursos</label>
+                        <textarea id="cursos" name="cursos" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="cv-section">
+                        <label for="descripcion">Descripción personal</label>
+                        <textarea id="descripcion" name="descripcion" rows="5"></textarea>
+                    </div>
+                    <div class="cv-section">
+                        <label for="pasatiempos">Pasatiempos</label>
+                        <textarea id="pasatiempos" name="pasatiempos" rows="3"></textarea>
+                    </div>
+                </div>
+            </div>
+            <button type="submit"><h3>Guardar</h3></button>
+        </form>
+    </div>
+    <div class="profile">
+        <h2>Mi Perfil</h2>
+        <ul id="perfil-info"></ul>
+    </div>
+    <script src="../js/cv_form.js"></script>
+</body>
+</html>
