@@ -25,12 +25,18 @@ document.addEventListener('DOMContentLoaded', function () {
         ]
     });
 
+    document.getElementById('logout-btn').addEventListener('click', function() {
+        borrarCookie('userCookie');
+        window.location.href = '../login.html'; // Cambia 'login.html' por la página a la que quieres redirigir
+    });
+
+    function borrarCookie(nombre) {
+        document.cookie = `${nombre}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+    }
+
     // Función para actualizar las partículas en respuesta al scroll
     function updateParticles(scrollPos) {
         Particles.particles.forEach(p => {
-            // Aquí puedes ajustar la posición de las partículas en función del scroll
-            // Por ejemplo, podrías modificar p.x y p.y basándote en scrollPos
-            // Esto es un ejemplo básico, puedes ajustar según tu diseño específico
             p.x += 0.1;  // Ejemplo: movimiento horizontal constante
             p.y += 0.1;  // Ejemplo: movimiento vertical constante
         });
@@ -88,16 +94,24 @@ function mostrarUsuarios(usuarios) {
 
         const usuarioBody = document.createElement('div');
         usuarioBody.classList.add('usuario-body');
-        usuarioBody.innerHTML = `
-            <p><strong>Proyectos:</strong> ${usuario.cv[0].proyectos}</p>
-            <p><strong>Experiencia:</strong> ${usuario.cv[0].experiencia}</p>
-            <p><strong>Carrera:</strong> ${usuario.cv[0].carrera}</p>
-            <p><strong>Habilidades:</strong> ${usuario.cv[0].habilidades}</p>
-            <p><strong>Objetivos:</strong> ${usuario.cv[0].objetivos}</p>
-            <p><strong>Cursos:</strong> ${usuario.cv[0].cursos}</p>
-            <p><strong>Descripción:</strong> ${usuario.cv[0].descripcion}</p>
-            <p><strong>Pasatiempos:</strong> ${usuario.cv[0].pasatiempos}</p>
-        `;
+        if(usuario.cv[0]){
+            usuarioBody.innerHTML = `
+                <p><strong>Proyectos:</strong> ${usuario.cv[0].proyectos}</p>
+                <p><strong>Experiencia:</strong> ${usuario.cv[0].experiencia}</p>
+                <p><strong>Carrera:</strong> ${usuario.cv[0].carrera}</p>
+                <p><strong>Habilidades:</strong> ${usuario.cv[0].habilidades}</p>
+                <p><strong>Objetivos:</strong> ${usuario.cv[0].objetivos}</p>
+                <p><strong>Cursos:</strong> ${usuario.cv[0].cursos}</p>
+                <p><strong>Descripción:</strong> ${usuario.cv[0].descripcion}</p>
+                <p><strong>Pasatiempos:</strong> ${usuario.cv[0].pasatiempos}</p>
+            `;
+        }
+        else{
+            usuarioBody.innerHTML = `
+                <p><strong>El usuario no ha llenado su CV</strong></p>
+            `;
+        }
+        
 
         usuarioDiv.appendChild(usuarioHeader);
         usuarioDiv.appendChild(usuarioBody);

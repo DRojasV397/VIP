@@ -22,14 +22,14 @@ document.addEventListener('DOMContentLoaded', function() {
         ]
     });
     document.getElementById('logout-btn').addEventListener('click', function() {
-    borrarCookie('userCookie');
+        borrarCookie('userCookie');
 
-    window.location.href = '../login.html'; // Cambia 'login.html' por la página a la que quieres redirigir
-});
+        window.location.href = '../login.html'; // Cambia 'login.html' por la página a la que quieres redirigir
+    });
 
-function borrarCookie(nombre) {
-    document.cookie = `${nombre}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
-}
+    function borrarCookie(nombre) {
+        document.cookie = `${nombre}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+    }
 
     const nombreCookie = "userCookie";
     const valorCookie = obtenerCookie(nombreCookie);
