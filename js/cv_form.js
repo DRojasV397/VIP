@@ -63,14 +63,16 @@ document.addEventListener('DOMContentLoaded', function() {
         // Validar cada textarea
         let isValid = true;
         const formData = new FormData(); // Usar FormData en lugar de un objeto {}
+        let flag = true;
     
         form.querySelectorAll('textarea').forEach(textarea => {
             const fieldName = textarea.name;
             const value = textarea.value.trim(); // Obtener el valor y quitar espacios en blanco al inicio y final
             
-            if (value === '') {
+            if (value === '' && flag) {
                 isValid = false;
                 alert(`El campo ${fieldName} no puede estar vacío.`);
+                flag = false
             }
     
             formData.append(fieldName, value); // Agregar el campo al FormData
@@ -91,8 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => response.json())
             .then(data => {
                 // Aquí puedes manejar la respuesta del servidor si es necesario
-                console.log('Respuesta del servidor:', data);
-                // Puedes limpiar el formulario o mostrar un mensaje de éxito
+                window.location.href = './dashboard.html';
             })
             .catch((error) => {
                 console.error('Error al enviar datos:', error);
@@ -124,6 +125,14 @@ function obtenerCookie(nombre) {
         }
     }
     return null;
+}
+
+function showError(message) {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: message
+    });
 }
 
 function obtenerDatosUsuario(apiURL) {

@@ -85,6 +85,7 @@ function mostrarUsuarios(usuarios) {
         usuarioHeader.classList.add('usuario-header');
         usuarioHeader.innerHTML = `
             <span>${usuario.nombre} ${usuario.apellidos}</span>
+            <span>${usuario.cv[0].puesto}</span>
             <span>${usuario.numero}</span>
             <span>${usuario.correo}</span>
         `;

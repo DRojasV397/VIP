@@ -9,6 +9,7 @@
 <body>
     <canvas class="background"></canvas>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <div class="container">
         <h1>VP - CV</h1>
         <form id="cv-form" class="cv-form">
@@ -42,6 +43,10 @@
                     </div>
                 </div>
                 <div class="column">
+                    <div class="cv-section">
+                        <label for="pasatiempos">Puesto</label>
+                        <textarea id="puesto" name="puesto" rows="3"></textarea>
+                    </div>
                     <div class="cv-section">
                         <label for="descripcion">Descripción personal</label>
                         <textarea id="descripcion" name="descripcion" rows="5"></textarea>

@@ -82,5 +82,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('cursos').textContent = cv.cursos;
         document.getElementById('descripcion').textContent = cv.descripcion;
         document.getElementById('pasatiempos').textContent = cv.pasatiempos;
+        document.getElementById('puesto').textContent = cv.puesto;
     }
 });
