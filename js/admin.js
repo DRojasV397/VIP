@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 function cargarUsuarios() {
-    fetch('http://127.0.0.1:5000/api/getAllUsers')
+    fetch('https://otros-d07g.onrender.com/api/getAllUsers')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Error al obtener los datos de los usuarios.');

@@ -86,6 +86,17 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     document.getElementById('editar-cv-btn').addEventListener('click', function() {
+        // Llenar los textarea con los valores actuales antes de habilitar el modo de edición
+        document.getElementById('proyectos-input').value = document.getElementById('proyectos').textContent;
+        document.getElementById('experiencia-input').value = document.getElementById('experiencia').textContent;
+        document.getElementById('carrera-input').value = document.getElementById('carrera').textContent;
+        document.getElementById('habilidades-input').value = document.getElementById('habilidades').textContent;
+        document.getElementById('objetivos-input').value = document.getElementById('objetivos').textContent;
+        document.getElementById('cursos-input').value = document.getElementById('cursos').textContent;
+        document.getElementById('descripcion-input').value = document.getElementById('descripcion').textContent;
+        document.getElementById('pasatiempos-input').value = document.getElementById('pasatiempos').textContent;
+        document.getElementById('puesto-input').value = document.getElementById('puesto').textContent;
+
         toggleEditMode(true);
     });
 
