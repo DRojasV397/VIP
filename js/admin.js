@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 function cargarUsuarios() {
-    fetch('https://otros-d07g.onrender.com/api/getAllUsers')
+    fetch('http://127.0.0.1:5000/api/getAllUsers')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Error al obtener los datos de los usuarios.');
@@ -77,18 +77,24 @@ function mostrarUsuarios(usuarios) {
     const listaUsuarios = document.getElementById('usuarios-lista');
     
     usuarios.forEach(usuario => {
-        console.log(usuario);
         const usuarioDiv = document.createElement('div');
         usuarioDiv.classList.add('usuario');
 
         const usuarioHeader = document.createElement('div');
         usuarioHeader.classList.add('usuario-header');
-        usuarioHeader.innerHTML = `
-            <span>${usuario.nombre} ${usuario.apellidos}</span>
-            <span>${usuario.cv[0].puesto}</span>
-            <span>${usuario.numero}</span>
-            <span>${usuario.correo}</span>
-        `;
+        if(usuario.cv[0])
+            usuarioHeader.innerHTML = `
+                <span>${usuario.nombre} ${usuario.apellidos}</span>
+                <span>${usuario.cv[0].puesto}</span>
+                <span>${usuario.numero}</span>
+                <span>${usuario.correo}</span>
+            `;
+        else
+            usuarioHeader.innerHTML = `
+                <span>${usuario.nombre} ${usuario.apellidos}</span>
+                <span>${usuario.numero}</span>
+                <span>${usuario.correo}</span>
+            `;
         usuarioHeader.addEventListener('click', function () {
             this.parentElement.querySelector('.usuario-body').classList.toggle('active');
         });
